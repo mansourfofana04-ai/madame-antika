@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madame Antika - Restaurant Afrolatino · Cocody, Abidjan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav id="navbar">
+    <div class="nav-logo">Madame Antika</div>
+
+    <ul class="nav-links">
+      <li><a href="#about">À Propos</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#ambiance">Ambiance</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="nav-reserve-btn" onclick="scrollToReservation()">Réserver</button>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="leaf leaf-1">🌿</div>
+    <div class="leaf leaf-2">🍃</div>
+    <div class="leaf leaf-3">🌴</div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Premier restaurant Afrolatino · Cocody, Abidjan</div>
+
+      <h1 class="hero-title">Madame<br><span>Antika</span></h1>
+
+      <p class="hero-subtitle">De la Côte d'Ivoire jusqu'à Cuba - Une table pas comme les autres</p>
+
+      <div class="hero-poem">
+        C'est la célébration d'un héritage culinaire<br>
+        De l'Afrique tropicale et des îles<br>
+        Son histoire c'est l'histoire<br>
+        D'un voyage, d'une aventure<br>
+        D'une femme, d'un amour<br>
+        D'une danse exotique
+      </div>
+
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="scrollToReservation()">Réserver une table</button>
+        <button class="btn-secondary" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Voir le menu</button>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Découvrir</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about">
+      <div class="about-visual">
+        <div class="about-card">
+          <span class="about-card-icon">🌺</span>
+          <div class="about-badge">
+            <span class="num">4,5</span>
+            <span class="txt">★ Sur Tripadvisor</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-label">Notre histoire</div>
+        <h2 class="section-title">Une femme.<br>Un voyage.<br>Une saveur.</h2>
+
+        <p>Madame Antika est née d'une passion : célébrer la rencontre entre la cuisine tropicale d'Afrique de l'Ouest et la richesse culinaire des Caraïbes, de Cuba à Haïti.</p>
+        <p>Au coeur de Cocody, dans un cadre unique - grande paillote, cabanes, salon africain - chaque plat raconte un voyage, chaque saveur porte une histoire d'amour et d'aventure.</p>
+
+        <div class="about-features">
+          <div class="about-feat"><div class="icon">🌴</div><div class="label">Cadre</div><div class="desc">Grande paillote & cabanes exotiques</div></div>
+          <div class="about-feat"><div class="icon">🎶</div><div class="label">Ambiance</div><div class="desc">Musique live Afrolatino & salsa</div></div>
+          <div class="about-feat"><div class="icon">🍽️</div><div class="label">Cuisine</div><div class="desc">Fusion africaine & caribéenne</div></div>
+          <div class="about-feat"><div class="icon">🕐</div><div class="label">Horaires</div><div class="desc">11h00 - 01h00, tous les jours</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="menu-section">
+    <div class="menu-inner">
+      <div class="menu-header">
+        <div class="section-label centered">Gastronomie Afrolatino</div>
+        <h2 class="section-title">Notre carte</h2>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" onclick="changerOnglet('entrees', this)">Entrées</button>
+        <button class="menu-tab" onclick="changerOnglet('plats', this)">Plats</button>
+        <button class="menu-tab" onclick="changerOnglet('desserts', this)">Desserts</button>
+        <button class="menu-tab" onclick="changerOnglet('boissons', this)">Boissons</button>
+      </div>
+
+      <!-- ENTRÉES — 6 plats sélectionnés -->
+      <div id="entrees" class="menu-grid" style="display:none;">
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Croquetas au fromage</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Entrées cubaines · Veg</div><div class="menu-item-desc">Trois croquettes de pomme de terre au fromage, croustillantes et fondues, servies avec salsa.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Volcan guacamole</div><div class="menu-item-price">4.500 F</div></div><div class="menu-item-origin">Entrées cubaines · Veg</div><div class="menu-item-desc">Délicieux plantain et tortilla chips avec une salade de guacamole.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Igname aux fromages</div><div class="menu-item-price">5.500 F</div></div><div class="menu-item-origin">Entrées ivoiriennes</div><div class="menu-item-desc">Frites d'igname croustillantes avec fromage fondu, viande hachée et salsa.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Crevettes d'Assinie</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Entrées ivoiriennes</div><div class="menu-item-desc">Crevettes locales panées avec plantain chips et salsa.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Salade d'Antika</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Salades · Veg</div><div class="menu-item-desc">Fromage au thym, salade verte, tomate, oignon, betterave, avocat, maïs doux et vinaigrette au thym.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Salade de langouste</div><div class="menu-item-price">9.500 F</div></div><div class="menu-item-origin">Salades</div><div class="menu-item-desc">Langouste, avocat, carotte, salade verte, tomate, oignon, betterave et vinaigrette au thym.</div></div>
+      </div>
+
+      <!-- PLATS — 6 plats sélectionnés -->
+      <div id="plats" class="menu-grid">
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Jambalaya à la créole</div><div class="menu-item-price">4.500 F</div></div><div class="menu-item-origin">Plats cubains</div><div class="menu-item-desc">Plat à base de riz, viande hachée, poulet et maïs doux, servi avec salsa.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Quesadillas Carnival</div><div class="menu-item-price">5.500 F</div></div><div class="menu-item-origin">Plats cubains</div><div class="menu-item-desc">Tortilla au boeuf, poivron, maïs doux, fromage et salsa, servie avec une salade de guacamole.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Poisson Akwaba</div><div class="menu-item-price">5.500 F</div></div><div class="menu-item-origin">Plats ivoiriens</div><div class="menu-item-desc">Poisson braisé avec une marinade spéciale, servi avec alloco et salade d'attiéké.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Fajita Burger</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Burgers</div><div class="menu-item-desc">Lamelles de boeuf fajita, fromage, salade verte, oignon et tomate, servies avec frites et guacamole.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Brochette diga</div><div class="menu-item-price">8.500 F</div></div><div class="menu-item-origin">Plats ivoiriens</div><div class="menu-item-desc">Grande brochette de poulet suspendue et marinée, servie avec frites et légumes sautés.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Pot-au-feu de mer</div><div class="menu-item-price">22.000 F</div></div><div class="menu-item-origin">Plats ivoiriens · Pour 2 personnes</div><div class="menu-item-desc">Langoustes, crabes, crevettes, igname et plantain avec riz blanc et riz d'Antika, servis sur une feuille de banane.</div></div>
+      </div>
+
+      <div id="desserts" class="menu-grid" style="display:none;">
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Ananas grillés au rhum</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Desserts cubains</div><div class="menu-item-desc">Ananas flambé et grillé au rhum, cannelle et sucre, servi avec glace à la vanille.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Empanadas aux pommes</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Desserts cubains</div><div class="menu-item-desc">Chausson feuilleté de pommes à la cannelle.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Quesadillas Chocolatta</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Desserts cubains</div><div class="menu-item-desc">Tortilla de carnaval à la cannelle, caramélisée et fourrée de chocolat fondu et d'alloco.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Glace frite</div><div class="menu-item-price">4.500 F</div></div><div class="menu-item-origin">Desserts cubains</div><div class="menu-item-desc">Dessert chaud et croustillant à l'extérieur, crème et froid à l'intérieur.</div></div>
+      </div>
+
+      <div id="boissons" class="menu-grid" style="display:none;">
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Martini Bianco</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Cocktail apéritif au vermouth blanc.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Martini Rosso</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Version rouge et aromatique du martini.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Gin tonic</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Classique rafraîchissant au gin et tonic.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cuba Libre</div><div class="menu-item-price">4.000 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Rhum blanc, coca et jus de citron vert.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Madame Massisse</div><div class="menu-item-price">5.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Jus d'ananas et fruits de passion, rhums légers et dorés.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Lady Dodo</div><div class="menu-item-price">5.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Jus de goyave et d'orange, rhums légers et dorés.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">1944 Mai Tai</div><div class="menu-item-price">6.000 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">La boisson au rhum la plus célèbre au monde.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Tika Puka Puka</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Jus d'orange et de grenadine, tiercé de rhums.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Mojito Cubano</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Cocktail traditionnel de la culture cubaine.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Pinki Pinki</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Cocktail cosmopolitan rosé à base de vodka.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Sex on the beach</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Cocktail rafraîchissant et fruité.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Margarita</div><div class="menu-item-price">6.500 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Cocktail à base de tequila inventé au Mexique.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bol d'éléphant (4 à 6 personnes)</div><div class="menu-item-price">22.000 F</div></div><div class="menu-item-origin">Cocktails alcoolisés</div><div class="menu-item-desc">Mélange festif de rhum, jus de pamplemousse, goyave et ananas, servi dans un grand bol en terre.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bissap</div><div class="menu-item-price">1.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Bissap maison bien frais.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Gingembre</div><div class="menu-item-price">1.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Jus de gingembre maison.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Limonade nature</div><div class="menu-item-price">2.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Limonade nature rafraîchissante.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Limonade à la menthe</div><div class="menu-item-price">2.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Limonade parfumée à la menthe.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Fraîcheur ananas ou mangue</div><div class="menu-item-price">2.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Selon la saison.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Virgin Mojito</div><div class="menu-item-price">4.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Version sans alcool du mojito.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bora Bora cocktail</div><div class="menu-item-price">4.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Cocktail fruité sans alcool.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Goyava Exotica</div><div class="menu-item-price">4.500 F</div></div><div class="menu-item-origin">Cocktails et jus non alcoolisés</div><div class="menu-item-desc">Cocktail exotique à la goyave.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bière à la pression</div><div class="menu-item-price">1.500 F</div></div><div class="menu-item-origin">Bières</div><div class="menu-item-desc">Bière pression fraîche.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bière locale</div><div class="menu-item-price">1.500 F</div></div><div class="menu-item-origin">Bières</div><div class="menu-item-desc">Sélection locale.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bière Tequila</div><div class="menu-item-price">1.500 F</div></div><div class="menu-item-origin">Bières</div><div class="menu-item-desc">Bière twist tequila.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Chelada</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Bières</div><div class="menu-item-desc">Bière à la mexicaine avec jus de citron vert et sel.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Michelada</div><div class="menu-item-price">3.000 F</div></div><div class="menu-item-origin">Bières</div><div class="menu-item-desc">Bière au piment, jus de tomate et jus de citron vert.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Merlot Le Vicomte Pays d'OC</div><div class="menu-item-price">8.000 F</div></div><div class="menu-item-origin">Vins rouges</div><div class="menu-item-desc">Vin rouge.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bordeaux Baron Louis</div><div class="menu-item-price">10.000 F</div></div><div class="menu-item-origin">Vins rouges</div><div class="menu-item-desc">Vin rouge.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bordeaux Château Bernard du Roc</div><div class="menu-item-price">12.000 F</div></div><div class="menu-item-origin">Vins rouges</div><div class="menu-item-desc">Vin rouge.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Bordeaux Château Gantonnet</div><div class="menu-item-price">15.000 F</div></div><div class="menu-item-origin">Vins rouges</div><div class="menu-item-desc">Vin rouge.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Sauvignon Le Vicomte Pays d'OC</div><div class="menu-item-price">11.000 F</div></div><div class="menu-item-origin">Vins blancs</div><div class="menu-item-desc">Vin blanc.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cour Bellevue Moelleux</div><div class="menu-item-price">11.000 F</div></div><div class="menu-item-origin">Vins blancs</div><div class="menu-item-desc">Vin blanc moelleux.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cinsault Le Vicomte Pays d'OC</div><div class="menu-item-price">11.000 F</div></div><div class="menu-item-origin">Vins rosés</div><div class="menu-item-desc">Vin rosé.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Black Eagle</div><div class="menu-item-price">2.000 F le verre · 10.000 F la bouteille</div></div><div class="menu-item-origin">Whiskies</div><div class="menu-item-desc">Disponible au verre ou à la bouteille.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Red Label</div><div class="menu-item-price">3.500 F le verre · 25.000 F la bouteille</div></div><div class="menu-item-origin">Whiskies</div><div class="menu-item-desc">Disponible au verre ou à la bouteille.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Jack Daniel's</div><div class="menu-item-price">5.000 F le verre · 35.000 F la bouteille</div></div><div class="menu-item-origin">Whiskies</div><div class="menu-item-desc">Disponible au verre ou à la bouteille.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Black Label</div><div class="menu-item-price">5.500 F le verre · 40.000 F la bouteille</div></div><div class="menu-item-origin">Whiskies</div><div class="menu-item-desc">Disponible au verre ou à la bouteille.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Eau 0.5 L</div><div class="menu-item-price">1.000 F</div></div><div class="menu-item-origin">Boissons</div><div class="menu-item-desc">Bouteille d'eau.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Eau 1.5 L</div><div class="menu-item-price">1.500 F</div></div><div class="menu-item-origin">Boissons</div><div class="menu-item-desc">Grande bouteille d'eau.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Sanpellegrino 0.75 L</div><div class="menu-item-price">3.000 F</div></div><div class="menu-item-origin">Boissons</div><div class="menu-item-desc">Eau pétillante.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Sanpellegrino 1 L</div><div class="menu-item-price">3.500 F</div></div><div class="menu-item-origin">Boissons</div><div class="menu-item-desc">Grande bouteille d'eau pétillante.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Sucreries</div><div class="menu-item-price">1.000 F</div></div><div class="menu-item-origin">Boissons</div><div class="menu-item-desc">Sélection de boissons sucrées.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Boisson énergisante</div><div class="menu-item-price">1.000 F</div></div><div class="menu-item-origin">Boissons</div><div class="menu-item-desc">Boisson énergisante fraîche.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Espresso (court-allongé)</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Boissons chaudes</div><div class="menu-item-desc">Café espresso.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Cappuccino</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Boissons chaudes</div><div class="menu-item-desc">Cappuccino mousseux.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Tisane</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Boissons chaudes</div><div class="menu-item-desc">Infusion chaude.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Thé rouge</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Boissons chaudes</div><div class="menu-item-desc">Thé rouge chaud.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Thé marocain</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Boissons chaudes</div><div class="menu-item-desc">Thé à la menthe façon marocaine.</div></div>
+        <div class="menu-item"><div class="menu-item-header"><div class="menu-item-name">Thé vert</div><div class="menu-item-price">2.000 F</div></div><div class="menu-item-origin">Boissons chaudes</div><div class="menu-item-desc">Thé vert chaud.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ambiance">
+    <div class="ambiance-section">
+      <div class="section-label">L'expérience</div>
+      <h2 class="section-title">Un cadre hors du commun</h2>
+
+      <div class="ambiance-grid">
+        <div class="amb-card wide">
+          <div class="amb-icon">🌿</div>
+          <div class="amb-title">La Grande Paillote</div>
+          <div class="amb-desc">Au coeur de Cocody, une architecture naturelle unique. La grande paillote vous transporte dans un espace tropical et authentique, entre Abidjan et les Caraïbes.</div>
+        </div>
+        <div class="amb-card">
+          <div class="amb-icon">🏚️</div>
+          <div class="amb-title">Les Cabanes</div>
+          <div class="amb-desc">Des espaces intimes nichés dans la verdure, parfaits pour un dîner romantique ou une soirée en petit comité.</div>
+        </div>
+        <div class="amb-card">
+          <div class="amb-icon">🛋️</div>
+          <div class="amb-title">Salon Africain</div>
+          <div class="amb-desc">Mobilier traditionnel, étoffes colorées et art africain pour une ambiance chaleureuse et authentique.</div>
+        </div>
+        <div class="amb-card">
+          <div class="amb-icon">🎵</div>
+          <div class="amb-title">Musique & Danse</div>
+          <div class="amb-desc">Des soirées rythmées par la salsa cubaine, l'afrobeat et la musique live.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       GALERIE — Photos de nos plats (Instagram @madame_antika)
+  ════════════════════════════════════════════════════════ -->
+  <section id="galerie" class="galerie-section">
+    <div class="galerie-inner">
+      <div class="section-label centered">@madame_antika</div>
+      <h2 class="section-title">Nos plats en images</h2>
+      <p class="galerie-subtitle">Laissez-vous tenter par nos créations Afrolatino</p>
+
+      <div class="galerie-grid">
+
+        <!-- Photo 1 — grande : Pot-au-feu de mer (fruits de mer sur feuille de banane) -->
+        <div class="galerie-item galerie-large">
+          <img
+            src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80"
+            alt="Pot-au-feu de mer — langoustes, crabes et crevettes sur feuille de banane"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🦞 Pot-au-feu de mer</span>
+          </div>
+        </div>
+
+        <!-- Photo 2 — Brochette Diga suspendue -->
+        <div class="galerie-item">
+          <img
+            src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=600&q=80"
+            alt="Brochette Diga — grande brochette de poulet suspendue"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🍢 Brochette Diga</span>
+          </div>
+        </div>
+
+        <!-- Photo 3 — Quesadillas Carnival -->
+        <div class="galerie-item">
+          <img
+            src="https://images.unsplash.com/photo-1618040996337-56904b7850b9?w=600&q=80"
+            alt="Quesadillas Carnival — tortilla au boeuf, fromage et guacamole"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🌮 Quesadillas Carnival</span>
+          </div>
+        </div>
+
+        <!-- Photo 4 — Crevettes d'Assinie -->
+        <div class="galerie-item">
+          <img
+            src="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=600&q=80"
+            alt="Crevettes d'Assinie — crevettes locales panées et plantain chips"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🍤 Crevettes d'Assinie</span>
+          </div>
+        </div>
+
+        <!-- Photo 5 — Ananas grillés au rhum -->
+        <div class="galerie-item">
+          <img
+            src="https://images.unsplash.com/photo-1546173159-315724a31696?w=600&q=80"
+            alt="Ananas grillés au rhum avec glace vanille"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🍍 Ananas grillés au rhum</span>
+          </div>
+        </div>
+
+        <!-- Photo 6 — grande : Cocktail Mojito Cubano / ambiance bar -->
+        <div class="galerie-item galerie-large">
+          <img
+            src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=800&q=80"
+            alt="Cocktails Afrolatino — Mojito Cubano et créations maison"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🍹 Cocktails Afrolatino</span>
+          </div>
+        </div>
+
+        <!-- Photo 7 — Poisson Akwaba braisé -->
+        <div class="galerie-item">
+          <img
+            src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=600&q=80"
+            alt="Poisson Akwaba — poisson braisé marinade spéciale et attiéké"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🐟 Poisson Akwaba</span>
+          </div>
+        </div>
+
+        <!-- Photo 8 — Salade d'Antika -->
+        <div class="galerie-item">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80"
+            alt="Salade d'Antika — avocat, betterave, fromage au thym et vinaigrette"
+            loading="lazy"
+          />
+          <div class="galerie-overlay">
+            <span class="galerie-label">🥗 Salade d'Antika</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Lien vers Instagram -->
+      <div class="galerie-instagram-cta">
+        <a
+          href="https://www.instagram.com/madame_antika/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary"
+        >
+          Voir plus sur Instagram →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reservation-section">
+    <div class="reservation-inner">
+      <div class="res-left">
+        <div class="section-label">Réservation</div>
+        <h2 class="section-title">Réservez votre table</h2>
+        <p>Assurez votre place dans ce voyage culinaire unique. Notre équipe se fera un plaisir de vous accueillir.</p>
+
+        <div class="res-info-item">
+          <div class="ico">📍</div>
+          <div>
+            <div class="label">Adresse</div>
+            <a class="val map-link" href="https://maps.google.com/maps?daddr=Boulevard+Des+Martyrs+Between+RTI+Intersection+and+Life+Intersection,+Cocody,+Abidjan+Ivory+Coast@5.345599,-4.002646" target="_blank" rel="noopener noreferrer">
+              Boulevard des Martyrs, entre RTI et Life, Cocody, Abidjan →
+            </a>
+          </div>
+        </div>
+
+        <div class="res-info-item">
+          <div class="ico">📞</div>
+          <div>
+            <div class="label">Téléphone</div>
+            <a class="val map-link" href="tel:+2250788220543">+225 07 88 22 05 43</a>
+          </div>
+        </div>
+
+        <div class="res-info-item">
+          <div class="ico">✉️</div>
+          <div>
+            <div class="label">Mail</div>
+            <a class="val map-link" href="mailto:madameantikaabidjan@gmail.com">madameantikaabidjan@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="res-info-item">
+          <div class="ico">🕐</div>
+          <div><div class="label">Horaires</div><div class="val">Tous les jours · 11h00 - 01h00</div></div>
+        </div>
+
+        <div class="res-info-item">
+          <div class="ico">⭐</div>
+          <div><div class="label">Note Tripadvisor</div><div class="val">4,5/5 · Nº 4 à Cocody</div></div>
+        </div>
+
+        <div class="res-socials">
+          <a class="social-pill" href="https://www.facebook.com/p/Madame-Antika-100083207567008/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a class="social-pill" href="https://www.instagram.com/madame_antika/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+
+      <div class="res-form" id="res-form-wrapper">
+        <div id="success-overlay" class="success-overlay" style="display:none;">
+          <div class="success-icon">🌺</div>
+          <div class="success-title">Réservation reçue !</div>
+          <div class="success-text" id="success-text">
+            Merci, nous avons bien reçu votre demande.<br>
+            Un membre de l'équipe vous contactera rapidement.
+          </div>
+          <button class="btn-secondary" style="margin-top:2rem;" onclick="resetForm()">Nouvelle réservation</button>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" placeholder="Votre nom" />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="tel" id="telephone" placeholder="+225 00 00 00 00 00" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Date souhaitée</label>
+            <input type="date" id="date" />
+          </div>
+          <div class="form-group">
+            <label for="heure">Heure</label>
+            <select id="heure">
+              <option value="">Choisir l'heure</option>
+              <option>12:00</option>
+              <option>12:30</option>
+              <option>13:00</option>
+              <option>13:30</option>
+              <option>14:00</option>
+              <option>19:00</option>
+              <option>19:30</option>
+              <option>20:00</option>
+              <option>20:30</option>
+              <option>21:00</option>
+              <option>21:30</option>
+              <option>22:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="couverts">Nombre de couverts</label>
+          <select id="couverts">
+            <option value="">Nombre de personnes</option>
+            <option>1 personne</option>
+            <option>2 personnes</option>
+            <option>3 personnes</option>
+            <option>4 personnes</option>
+            <option>5-6 personnes</option>
+            <option>7-8 personnes</option>
+            <option>+ de 8 personnes</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Demandes spéciales (optionnel)</label>
+          <textarea id="notes" placeholder="Allergies, occasion spéciale, espace préféré..."></textarea>
+        </div>
+
+        <button class="submit-btn" onclick="soumettreFormulaire()">Confirmer la réservation →</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="avis" class="avis-section">
+    <div class="avis-inner">
+      <div class="section-label">Ce qu'ils en disent</div>
+      <h2 class="section-title">Avis de nos clients</h2>
+
+      <div class="avis-grid">
+        <div class="avis-card">
+          <div class="avis-header">
+            <div class="avis-avatar">S</div>
+            <div>
+              <div class="avis-name">Sylvia W.</div>
+              <div class="avis-origine">Paris, France</div>
+            </div>
+            <div class="avis-stars">★★★★★</div>
+          </div>
+          <div class="avis-titre">Super restaurant</div>
+          <div class="avis-texte">Nous avons passé une excellente soirée. La musique et le personnel étaient formidables. Les plats étaient tout simplement délicieux. Merci pour cette soirée en famille à Abidjan.</div>
+          <div class="avis-date">Août 2025 · Tripadvisor</div>
+        </div>
+
+        <div class="avis-card">
+          <div class="avis-header">
+            <div class="avis-avatar">M</div>
+            <div>
+              <div class="avis-name">Matthias T.</div>
+              <div class="avis-origine">Abidjan, Côte d'Ivoire</div>
+            </div>
+            <div class="avis-stars">★★★★☆</div>
+          </div>
+          <div class="avis-titre">D'Abidjan à Cuba</div>
+          <div class="avis-texte">Un cadre très convivial et original. L'histoire du restaurant est très intéressante. La nourriture est bonne et relevée. Une adresse sûre à Abidjan, j'y suis allé deux fois.</div>
+          <div class="avis-date">Novembre 2024 · Tripadvisor</div>
+        </div>
+
+        <div class="avis-card">
+          <div class="avis-header">
+            <div class="avis-avatar">C</div>
+            <div>
+              <div class="avis-name">Christian C.</div>
+              <div class="avis-origine">Abidjan, Côte d'Ivoire</div>
+            </div>
+            <div class="avis-stars">★★★★★</div>
+          </div>
+          <div class="avis-titre">Belle surprise</div>
+          <div class="avis-texte">Excellent accueil et bonne cuisine. Atmosphère afro-latine très sympathique dans un cadre chaleureux. Une belle découverte, parfaite pour une soirée en couple.</div>
+          <div class="avis-date">Août 2023 · Tripadvisor</div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:3rem;">
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g17512259-d25197654-Reviews-Madame_Antika-Cocody_Abidjan_Lagunes_Region.html" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          Voir tous les avis sur Tripadvisor →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">Madame Antika</div>
+        <p>Le premier restaurant Afrolatino d'Abidjan. De la Côte d'Ivoire jusqu'à Cuba, une table pas comme les autres.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">À Propos</li>
+          <li onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Notre carte</li>
+          <li onclick="document.getElementById('ambiance').scrollIntoView({behavior:'smooth'})">L'ambiance</li>
+          <li onclick="scrollToReservation()">Réservation</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Boulevard des Martyrs</li>
+          <li>Cocody, Abidjan</li>
+          <li><a class="footer-link" href="tel:+2250788220543">+225 07 88 22 05 43</a></li>
+          <li><a class="footer-link" href="mailto:madameantikaabidjan@gmail.com">madameantikaabidjan@gmail.com</a></li>
+          <li><a class="footer-link" href="https://www.facebook.com/p/Madame-Antika-100083207567008/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+          <li><a class="footer-link" href="https://www.instagram.com/madame_antika/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li>11:00 - 01:00</li>
+          <li class="gold-text">Tripadvisor · 4,5 ★</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Madame Antika · Tous droits réservés</p>
+      <div class="rating">
+        <span class="stars">★★★★½</span>
+        <span class="rating-text">Nº 4 à Cocody · Tripadvisor</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
